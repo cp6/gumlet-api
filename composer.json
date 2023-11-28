@@ -1,6 +1,6 @@
 {
   "name": "corbpie/gumlet-api",
-  "description": "Gumlet API",
+  "description": "Gumlet video hosting API wrapper",
   "type": "library",
   "license": "MIT",
   "minimum-stability": "stable",
@@ -13,7 +13,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/cp6/Gumlet-API"
+      "url": "https://github.com/cp6/gumlet-api"
     }
   ],
   "require": {
