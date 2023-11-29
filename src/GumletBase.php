@@ -2,17 +2,11 @@
 
 namespace Corbpie\Gumlet;
 
-
-class GumletApi
+class GumletBase
 {
     private const API_KEY = 'ABC123';
     private const API_URL = 'https://api.gumlet.com/v1/';
     protected string $api_key;
-    public string $video_id;
-
-    public string $video_collection;
-
-    public string $profile_id;
 
     public int $response_code;
 
@@ -67,24 +61,5 @@ class GumletApi
         ];
     }
 
-    public function getProfile(): array
-    {
-        return $this->ApiCall('GET', "video/profiles/{$this->profile_id}");
-    }
-
-    public function listProfiles(): array
-    {
-        return $this->ApiCall('GET', "video/profiles");
-    }
-
-    public function listVideos(): array
-    {
-        return $this->ApiCall('GET', "video/assets/list/{$this->video_collection}");
-    }
-
-    public function getVideo(): array
-    {
-        return $this->ApiCall('GET', "video/assets/{$this->video_id}");
-    }
 
 }
