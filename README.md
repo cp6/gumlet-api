@@ -11,9 +11,14 @@
 
 - [Features](#features)
 - [Installing & usage](#installing)
-    - [Usagae](#usage)
+    - [Usage](#usage)
     - [Setting API key](#setting-api-key)
+- [Profiles](#list-profiles)
+  - [List profiles](#list-profiles)
+  - [Set profile](#set-profile)
+  - [Get profile](#get-profile)
 - [Video](#video)
+    - [List videos](#list-videos)
     - [Create from URL](#create-video-from-a-url)
 
 ---
@@ -58,11 +63,55 @@ const API_KEY = 'XXXX-XXXX-XXXX';
 
 ---
 
+## List Profiles
+
+
+```php
+ $gm->listProfiles();
+```
+
+---
+
+## Set Profile
+
+**Requires $gm->profile_id to be set**
+
+
+```php
+$gm->profile_id = 'TJQuvxBnOcxQwnPOWc';
+```
+
+---
+
+## Get Profile
+
+**Requires $gm->profile_id to be set**
+
+
+```php
+ $gm->getProfile();
+```
+
+---
+
+
+## List videos
+
+**Requires $gm->video_collection to be set**
+
+```php
+ $gm->listVideos();
+```
+
+---
+
 ## Create video from a URL
 
 **Requires $url and $gm->video_collection**
 
-`$gm->createVideoFromUrl($url, $format, $parameters);`
+```php
+ $gm->createVideoFromUrl($url, $format, $parameters);
+```
 
 _Inputs:_
 
