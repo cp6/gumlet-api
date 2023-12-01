@@ -10,7 +10,6 @@ class GumletVideo extends GumletBase
 
     public string $profile_id;
 
-
     public function getProfile(): array
     {
         return $this->ApiCall('GET', "video/profiles/{$this->profile_id}");
@@ -19,6 +18,11 @@ class GumletVideo extends GumletBase
     public function listProfiles(): array
     {
         return $this->ApiCall('GET', "video/profiles");
+    }
+
+    public function deleteProfile(): array
+    {
+        return $this->ApiCall('DELETE', "video/profiles/{$this->profile_id}");
     }
 
     public function listVideos(): array
@@ -69,6 +73,13 @@ class GumletVideo extends GumletBase
         $parameters['input'] = $url;
         $parameters['format'] = $format;
         return $this->ApiCall('POST', "video/assets", $parameters);
+    }
+
+    public function createProfile(string $name, string $format = 'HLS', array $parameters = []): array
+    {
+        $parameters['name'] = $name;
+        $parameters['format'] = $format;
+        return $this->ApiCall('POST', "video/profiles", $parameters);
     }
 
 }
