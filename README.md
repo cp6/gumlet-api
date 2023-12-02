@@ -2,6 +2,8 @@
 
 ## This is currently in progress!
 
+
+![Badge](https://img.shields.io/badge/V%201.0-blue)
 ![Badge](https://img.shields.io/badge/PHP%208.2-✔-brightgreen)
 
 
@@ -24,6 +26,8 @@
 ---
 
 # Features
+
+Create and update videos & profiles...
 
 ---
 <span id="installing"></span>
