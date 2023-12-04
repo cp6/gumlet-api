@@ -60,6 +60,23 @@ class GumletVideo extends GumletBase
         return $this->ApiCall('POST', "video/assets/update", ['asset_id' => $this->video_id, 'tag' => $tag]);
     }
 
+    public function uploadVideo(string $upload_url, string $video_filename): int
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $upload_url);
+        curl_setopt($curl, CURLOPT_PUT, 1);
+        curl_setopt($curl, CURLOPT_INFILE, fopen($video_filename, 'rb'));
+        curl_setopt($curl, CURLOPT_INFILESIZE, filesize($video_filename));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $call = curl_exec($curl);
+        $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        curl_close($curl);
+
+        return $http_code;
+    }
+
     public function getMostViewed(string $start_at, string $end_at, string $collection_id = '', int $page = 1, int $per_page = 100): array
     {
         ($collection_id !== "") ? $collection = "&collection_id={$collection_id}" : $collection = "";
