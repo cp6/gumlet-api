@@ -4,8 +4,10 @@ namespace Corbpie\Gumlet;
 
 class GumletBase
 {
-    private const API_KEY = 'ABC123';
+    private const API_KEY = 'CHANGE_ME';
+
     private const API_URL = 'https://api.gumlet.com/v1/';
+
     protected string $api_key;
 
     public int $response_code;
@@ -60,6 +62,5 @@ class GumletBase
             'response' => json_decode($this->response_body, true),
         ];
     }
-
 
 }
