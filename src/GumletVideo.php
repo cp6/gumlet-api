@@ -86,7 +86,7 @@ class GumletVideo extends GumletBase
     public function createVideoFromUrl(string $url, string $format = 'HLS', array $parameters = []): array
     {
         $parameters['collection_id'] = $this->video_collection;
-        $parameters['profile_id'] = $this->profile_id;//Providing this ignores format
+        $parameters['profile_id'] = $this->profile_id ?? null;//Providing this ignores format
         $parameters['input'] = $url;
         $parameters['format'] = $format;
         return $this->ApiCall('POST', "video/assets", $parameters);
