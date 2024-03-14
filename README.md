@@ -21,7 +21,9 @@
   - [Get profile](#get-profile)
 - [Video](#video)
     - [List videos](#list-videos)
+    - [Get video details](#get-video-details)
     - [Create from URL](#create-video-from-a-url)
+    - [Update thumbnail from frame](#update-thumbnail-from-frame)
 
 ---
 
@@ -106,6 +108,17 @@ $gm->profile_id = 'TJQuvxBnOcxQwnPOWc';
 ```php
  $gm->listVideos();
 ```
+---
+
+
+## Get video details
+
+```php
+ $gm->video_id = '65f1819d759d13a91c0a4c09';
+
+ echo json_encode($gm->getVideo());
+
+```
 
 ---
 
@@ -141,4 +154,46 @@ _Inputs:_
 'audio_only'=> false,
 'enable_drm'=> true
 ]
+```
+
+
+#### Example for creating a video from URL with multiple audio tracks:
+
+```php
+$parameters = [
+    'profile_id' => '65138fa952ccfd817db2a665',
+    'title' => 'The title for this great video',
+    'description' => 'The description for this great video',
+    'mp4_access' => false,
+    'audio_only' => false,
+    'additional_tracks' => [
+        [
+            'url' => 'https://gumlet.sgp1.digitaloceanspaces.com/video/sample_1.aac',
+            'type' => 'audio',
+            'language_code' => 'en',
+            'name' => 'English'],
+        [
+            'url' => 'https://gumlet.sgp1.digitaloceanspaces.com/video/sample_1.aac',
+            'type' => 'audio',
+            'language_code' => 'pl',
+            'name' => 'Polish'
+        ]
+    ]
+];
+
+$video = $gm->createVideoFromUrl(
+    'https://domain.com/video.mp4',
+    'MP4',
+    $parameters
+);
+```
+---
+
+## Update thumbnail from frame
+
+```php
+ $gm->video_id = '65f1819d759d13a91c0a4c09';
+ 
+ $frame = 20;
+ $gm->updateVideoThumbnailFromFrame($frame);
 ```
