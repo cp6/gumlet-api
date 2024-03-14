@@ -24,6 +24,8 @@
     - [Get video details](#get-video-details)
     - [Create from URL](#create-video-from-a-url)
     - [Update thumbnail from frame](#update-thumbnail-from-frame)
+    - [Update video title](#update-video-title)
+    - [Update video description](#update-video-description)
 
 ---
 
@@ -196,4 +198,24 @@ $video = $gm->createVideoFromUrl(
  
  $frame = 20;
  $gm->updateVideoThumbnailFromFrame($frame);
+```
+
+---
+
+## Update video title
+
+```php
+ $gm->video_id = '65f1819d759d13a91c0a4c09';
+ 
+ $gm->updateVideoTitle('The new title for this video');
+```
+
+---
+
+## Update video description
+
+```php
+ $gm->video_id = '65f1819d759d13a91c0a4c09';
+ 
+ $gm->updateVideoDescription('The new description for this video');
 ```
