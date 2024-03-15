@@ -5,15 +5,6 @@ use Corbpie\Gumlet;
 
 $gm = new Gumlet\GumletVideo();
 
-//Setting video collection
-$gm->video_collection = '64b8c2bf2c2bc76a3c83f096';
-
-//Setting video ID
-//$gm->video_id = '64bbf923a0f8d93c55f09ba0';
-
-//echo json_encode($gm->listProfiles());
-
-
 //Creating (adding) a new video with extra audio channels
 $parameters = [
     'profile_id' => '65138fa952ccfd817db2a665',
@@ -41,6 +32,5 @@ $video = $gm->createVideoFromUrl(
     'MP4',
     $parameters
 );
-
 
 echo json_encode($video);
