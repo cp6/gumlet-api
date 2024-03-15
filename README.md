@@ -1,9 +1,9 @@
-# Gumlet video hosting API wrapper
+# Gumlet video hosting and streaming API wrapper
 
 ## This is currently in progress!
 
 
-![Badge](https://img.shields.io/badge/V%201.0-blue)
+![Badge](https://img.shields.io/badge/V%200.9-blue)
 ![Badge](https://img.shields.io/badge/PHP%208.2-✔-brightgreen)
 
 
