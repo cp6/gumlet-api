@@ -19,6 +19,7 @@
   - [List profiles](#list-profiles)
   - [Set profile](#set-profile)
   - [Get profile](#get-profile)
+  - [Create profile](#create-a-profile)
 - [Video](#video)
     - [List videos](#list-videos)
     - [Get video details](#get-video-details)
@@ -26,6 +27,7 @@
     - [Update thumbnail from frame](#update-thumbnail-from-frame)
     - [Update video title](#update-video-title)
     - [Update video description](#update-video-description)
+    - [Delete video](#delete-video)
 
 ---
 
@@ -98,6 +100,21 @@ $gm->profile_id = 'TJQuvxBnOcxQwnPOWc';
 
 ```php
  $gm->getProfile();
+```
+
+---
+
+## Create a Profile
+
+```php
+ $parameters = [
+ 'description' => 'The description for this new profile',
+ 'mp4_access' => true
+];
+
+ $format = 'HLS';//HLS, MPEG-DASH, MP4
+
+ $gm->createProfile('the-new-profile-name', $format, $parameters);
 ```
 
 ---
@@ -218,4 +235,13 @@ $video = $gm->createVideoFromUrl(
  $gm->video_id = '65f1819d759d13a91c0a4c09';
  
  $gm->updateVideoDescription('The new description for this video');
+```
+---
+
+## Delete video
+
+```php
+ $gm->video_id = '65f1819d759d13a91c0a4c09';
+ 
+ $gm->deleteVideo();
 ```
