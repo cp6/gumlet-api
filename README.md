@@ -1,6 +1,6 @@
 # Gumlet video hosting and streaming API wrapper
 
-## Please note that this package is still in progress!
+### Please note that this package is still in progress!
 
 
 ![Badge](https://img.shields.io/badge/Version-0.9-blue)
