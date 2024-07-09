@@ -12,12 +12,12 @@ class GumletCollection extends GumletBase
         return $this->ApiCall('GET', "video/sources");
     }
 
-    public function getCollection(string $collection_id): array
+    public function getCollection(): array
     {
         return $this->ApiCall('GET', "video/sources/{$this->collection_id}");
     }
 
-    public function deleteCollection(string $collection_id): array
+    public function deleteCollection(): array
     {
         return $this->ApiCall('DELETE', "video/sources/{$this->collection_id}");
     }
@@ -30,7 +30,7 @@ class GumletCollection extends GumletBase
         return $this->ApiCall('POST', "video/sources", $parameters);
     }
 
-    public function updateCollection(string $collection_id, array $parameters): array
+    public function updateCollection(array $parameters): array
     {
         return $this->ApiCall('POST', "video/sources/{$this->collection_id}", $parameters);
     }
