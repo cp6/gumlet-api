@@ -5,8 +5,6 @@ namespace Corbpie\Gumlet;
 class GumletCollection extends GumletBase
 {
 
-    public string $collection_id;
-
     public function getCollections(): array
     {
         return $this->ApiCall('GET', "video/sources");

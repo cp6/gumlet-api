@@ -14,6 +14,14 @@ class GumletBase
 
     public bool|string $response_body;
 
+    public string $video_id;
+
+    public string $collection_id;
+
+    public string $profile_id;
+
+    public string $playlist_id;
+
     public function __construct()
     {
         $this->api_key = self::API_KEY;

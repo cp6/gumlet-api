@@ -4,12 +4,6 @@ namespace Corbpie\Gumlet;
 
 class GumletVideo extends GumletBase
 {
-    public string $video_id;
-
-    public string $video_collection;
-
-    public string $profile_id;
-
     public function getProfile(): array
     {
         return $this->ApiCall('GET', "video/profiles/{$this->profile_id}");
@@ -27,7 +21,7 @@ class GumletVideo extends GumletBase
 
     public function listVideos(): array
     {
-        return $this->ApiCall('GET', "video/assets/list/{$this->video_collection}");
+        return $this->ApiCall('GET', "video/assets/list/{$this->collection_id}");
     }
 
     public function getVideo(): array
@@ -85,7 +79,7 @@ class GumletVideo extends GumletBase
 
     public function createVideoFromUrl(string $url, string $format = 'HLS', array $parameters = []): array
     {
-        $parameters['collection_id'] = $this->video_collection;
+        $parameters['collection_id'] = $this->collection_id;
         $parameters['profile_id'] = $this->profile_id ?? null;//Providing this ignores format
         $parameters['input'] = $url;
         $parameters['format'] = $format;

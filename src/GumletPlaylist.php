@@ -5,8 +5,6 @@ namespace Corbpie\Gumlet;
 class GumletPlaylist extends GumletBase
 {
 
-    public string $playlist_id;
-
     public function getPlaylists(): array
     {
         return $this->ApiCall('GET', "video/sources");
