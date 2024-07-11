@@ -93,4 +93,12 @@ class GumletVideo extends GumletBase
         return $this->ApiCall('POST', "video/profiles", $parameters);
     }
 
+    public function getAnalytics(string $metrics = 'top_assets', string $start_date = '', string $end_date = ''): array
+    {
+        $parameters['metrics'] = [$metrics];
+        $parameters['date_range'] = ['start_at' => $start_date, 'end_at' => $end_date];
+        $parameters['filters'] = ['collection_id' => $this->collection_id] ?? null;
+        return $this->ApiCall('POST', "video/analytics", $parameters);
+    }
+
 }
