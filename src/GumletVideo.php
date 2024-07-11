@@ -86,13 +86,6 @@ class GumletVideo extends GumletBase
         return $this->ApiCall('POST', "video/assets", $parameters);
     }
 
-    public function createProfile(string $name, string $format = 'HLS', array $parameters = []): array
-    {
-        $parameters['name'] = $name;
-        $parameters['format'] = $format;
-        return $this->ApiCall('POST', "video/profiles", $parameters);
-    }
-
     public function getAnalytics(string $metrics = 'top_assets', string $start_date = '', string $end_date = ''): array
     {
         $parameters['metrics'] = [$metrics];
