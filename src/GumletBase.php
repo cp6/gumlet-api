@@ -37,13 +37,11 @@ class GumletBase
         } elseif ($method === "POST") {//POST request
             curl_setopt($curl, CURLOPT_POST, 1);
             if (!empty($params)) {
-                $data = json_encode($params);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
             }
         } elseif ($method === "PUT") {//PUT request
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-            $data = json_encode($params);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
         } elseif ($method === "DELETE") {//DELETE request
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
             if (!empty($params)) {
