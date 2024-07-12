@@ -94,4 +94,10 @@ class GumletVideo extends GumletBase
         return $this->ApiCall('POST', "video/analytics", $parameters);
     }
 
+    public function uploadVideoSubtitles(string $language_codes): array
+    {
+        return $this->ApiCall('POST', "video/assets/{$this->video_id}/subtitle/upload", ['language_codes' => $language_codes]);
+    }
+
+
 }
